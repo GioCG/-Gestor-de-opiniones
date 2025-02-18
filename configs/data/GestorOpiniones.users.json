@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "67b4bf0a7dde5e1fb1c7877a"
+  },
+  "name": "ElpoJohn",
+  "username": "jordy",
+  "email": "wasa32@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$vIx4Rw467mDo2L6J5FLiDQ$sQaPtqYmyqx0EY/9UL6OPF1rTCph/P7+MJpahkAzsSA",
+  "role": "USER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-18T17:10:34.190Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T17:10:34.190Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b4c2e7770f38bee971767a"
+  },
+  "name": "Gioma",
+  "username": "Donpolla",
+  "email": "Giomawasa@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$PlRc/iKg7U27F1Tq0C1aUA$9F7BGhWkqHnL9LH+LpvSPD1rXow8TIBiCQeZywhLNbA",
+  "role": "USER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-18T17:27:03.941Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-18T17:27:03.941Z"
+  }
+}]
