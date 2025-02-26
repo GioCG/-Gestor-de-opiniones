@@ -1,6 +1,7 @@
 import Publicacion from '../publicaciones/publicacion.model.js'
 import User from'../user/user.model.js'
 import Categori from '../categori/categori.model.js'
+import Commit from '../commit/commit.model.js'
 import jwt from 'jsonwebtoken';
 
 export const addPublicacion = async (req, res) => {
@@ -114,45 +115,50 @@ export const editPublicacion = async (req, res) => {
 
 export const deletPublicacion = async (req, res) => {
     try {
-        const {id} = req.params
-        const token = req.header("x-token")
-        const {uid} = jwt.verify(token, process.env.SECRETORPRIVATEKEY)
- 
-        const publicacion = await Publicacion.findById(id)
- 
-        if(!publicacion){
-            return res.status(403).json({
-                success:false,
-                msg: "La publicacion no existe"
-            })
+        const { id } = req.params;
+        const token = req.header("x-token");
+        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+
+        const publicacion = await Publicacion.findById(id);
+
+        if (!publicacion) {
+            return res.status(404).json({
+                success: false,
+                msg: "La publicación no existe"
+            });
         }
- 
-        if(publicacion.user.toString() !== uid){
+
+        if (publicacion.user.toString() !== uid) {
             return res.status(401).json({
                 success: false,
-                msg: "No tienes acceso para eliminar esta publicacion"
-            })
+                msg: "No tienes acceso para eliminar esta publicación"
+            });
         }
- 
-        if(publicacion.status === false){
+
+        if (publicacion.status === false) {
             return res.status(403).json({
-                msg: "La publicacion fue eliminada con anterioridad"
-            })
+                success: false,
+                msg: "La publicación ya fue eliminada anteriormente"
+            });
         }
- 
-        await Publicacion.findByIdAndUpdate(id, {status: false})
- 
+
+        await Publicacion.findByIdAndUpdate(id, { status: false });
+
+        await Commit.updateMany({ publicacion: id }, { status: false });
+
         return res.status(200).json({
             success: true,
-            msg: "PUBLICACION ELIMINADA CON EXITO!!!"
-        })
+            msg: "PUBLICACIÓN Y COMENTARIOS DESACTIVADOS CON ÉXITO!!!"
+        });
+
     } catch (err) {
+        console.error(err);
         return res.status(500).json({
             success: false,
             error: err.message
-        })
+        });
     }
-}
+};
 
 export const listPublicacion = async (req, res) => {
     const { limite = 50, desde = 0} = req.query;
