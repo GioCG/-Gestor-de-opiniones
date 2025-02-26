@@ -1,21 +1,21 @@
 import { Router } from "express";
-//import { registerValidator, loginValidator } from "../middlewares/validator.js";
+import { registerValidator, loginValidator } from "../middleware/validator.js";
 import { login,register } from "../auth/auth.controler.js";
-//import {deleteFileOnError} from "../middlewares/delete-file-on-error.js"
+import {deleteFileOnError} from "../middleware/delete-file-on-error.js"
 
 const router = Router();
  
 router.post(
     '/login',
-   // loginValidator,
-  //  deleteFileOnError,
+    loginValidator,
+    deleteFileOnError,
     login
 );
  
 router.post(
     '/register',
-   //  registerValidator,
-   // deleteFileOnError,
+    registerValidator,
+    deleteFileOnError,
     register
 )
  
