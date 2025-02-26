@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "67bb6bc26f3388d29163acf2"
+  },
+  "name": "Gioma",
+  "username": "gio",
+  "email": "Gioma@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$2CsQcTLWgDsnIqZ2qgiECA$9NYyHe+e2PaI3kecjP4R/k4JlPSw4stBcAeSVbsW/Sw",
+  "role": "USER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T18:41:06.912Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T04:17:53.205Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bb867198c3c925d1ab4be0"
+  },
+  "name": "cano",
+  "username": "pe",
+  "email": "peCano@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$cS+bs2xZq4Fbw/TjEFw7fA$/57hmjYYBoN2A5tBw6fGMZ1QcSFoR4HqinOZuIrgSEo",
+  "role": "USER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-23T20:34:57.744Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-23T20:34:57.744Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bd236cdc893f0e4befae8d"
+  },
+  "name": "eaasa",
+  "username": "jordi",
+  "email": "admin12345@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$D+CH5efIFEOOWtMlMrgliw$DAqI2mTuXLdt4BaUUBsIYzlUoAaTN8BiCb3hwiuLam4",
+  "role": "ADMIN_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-25T01:57:00.067Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-25T01:57:00.067Z"
+  }
+}]

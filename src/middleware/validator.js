@@ -3,8 +3,6 @@ import { validarCampos } from "./validar-campos.js";
 import { existenteEmail } from "../helpers/db-validator.js";
 import { validarJWT } from "../middleware/validar-jwt.js";
 
-// Middleware para validar token
-const validator = validarJWT;
 
 export const registerValidator = [
     body("name", "The name is required").not().isEmpty(),
@@ -22,7 +20,7 @@ export const loginValidator = [
 ];
 
 export const publicacionValidator = [
-    validator,
+    validarJWT,
     body("title").optional().isString().withMessage("El título debe ser un texto válido"),
     body("categoriname", "La categoría es obligatoria").not().isEmpty(),
     body("textoprincipal", "El texto principal es obligatorio").not().isEmpty(),    
@@ -30,7 +28,7 @@ export const publicacionValidator = [
 ];
 
 export const editPublicacionValidator = [
-    validator,
+    validarJWT,
     param("id").isMongoId().withMessage("ID no válido de MongoDB"),
     validarCampos
 ];
