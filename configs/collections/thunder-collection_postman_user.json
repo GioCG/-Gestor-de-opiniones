@@ -1,6 +1,6 @@
 {
     "info": {
-        "_postman_id": "5ddc8439-139b-4a1b-a17d-62b9f5589ba4",
+        "_postman_id": "30f0ffff-c4c1-4ed6-b731-35e0cad1faf0",
         "name": "user",
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
         "description": ""
@@ -125,13 +125,60 @@
         {
             "name": "updatePassword",
             "request": {
-                "method": "PUT"
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/user/updatePassword/67bb867198c3c925d1ab4be0",
+                    "path": [
+                        "GestorOpinionesSystem",
+                        "v1",
+                        "user",
+                        "updatePassword",
+                        "67bb867198c3c925d1ab4be0"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"contraAntigua\":\"canoinsano\",\n  \"contraNueva\":\"gioma123\"\n}"
+                }
             }
         },
         {
             "name": "updateUser",
             "request": {
-                "method": "PUT"
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/user/67bb867198c3c925d1ab4be0",
+                    "path": [
+                        "GestorOpinionesSystem",
+                        "v1",
+                        "user",
+                        "67bb867198c3c925d1ab4be0"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"name\": \"Gioma\",\n  \"username\":\"gio\",\n  \"email\":\"Gioma@gmail.com\"\n}"
+                }
             }
         },
         {
@@ -236,120 +283,6 @@
                     },
                     "raw": "{\n  \"status\":\"false\"\n}"
                 }
-            }
-        },
-        {
-            "name": "addPublicacion",
-            "request": {
-                "method": "POST",
-                "url": {
-                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/publicacion",
-                    "path": [
-                        "GestorOpinionesSystem",
-                        "v1",
-                        "publicacion"
-                    ],
-                    "protocol": "http",
-                    "host": [
-                        "localhost"
-                    ],
-                    "port": "3000"
-                },
-                "header": [
-                    {
-                        "key": "x-token",
-                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiODY3MTk4YzNjOTI1ZDFhYjRiZTAiLCJpYXQiOjE3NDA0NTA1MDUsImV4cCI6MTc0MDQ1NDEwNX0.93VkIHZp3XBVzRhbgKx2ockfAO10qh-sWW2li2Av9lA"
-                    }
-                ],
-                "body": {
-                    "mode": "raw",
-                    "options": {
-                        "raw": {
-                            "language": "json"
-                        }
-                    },
-                    "raw": "{\n  \"titulo\":\"wasdadasd wq\",\n  \"textoprincipal\":\"esta mierda me da miedo\",\n  \"username\":\"pe\",\n  \"categoriname\":\"pelicula\"\n}"
-                }
-            }
-        },
-        {
-            "name": "publicacionList",
-            "request": {
-                "method": "GET",
-                "url": {
-                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/publicacion/",
-                    "path": [
-                        "GestorOpinionesSystem",
-                        "v1",
-                        "publicacion"
-                    ],
-                    "protocol": "http",
-                    "host": [
-                        "localhost"
-                    ],
-                    "port": "3000"
-                }
-            }
-        },
-        {
-            "name": "editPublicacion",
-            "request": {
-                "method": "PUT",
-                "url": {
-                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/publicacion/67bb778e24783fb988835893",
-                    "path": [
-                        "GestorOpinionesSystem",
-                        "v1",
-                        "publicacion",
-                        "67bb778e24783fb988835893"
-                    ],
-                    "protocol": "http",
-                    "host": [
-                        "localhost"
-                    ],
-                    "port": "3000"
-                },
-                "header": [
-                    {
-                        "key": "x-token",
-                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiNmJjMjZmMzM4OGQyOTE2M2FjZjIiLCJpYXQiOjE3NDA0NDc4NDAsImV4cCI6MTc0MDQ1MTQ0MH0.uCQl7uIC-Ya0Ee9o2wkRAzLF8ZplIqMXfbi20YjjHKE"
-                    }
-                ],
-                "body": {
-                    "mode": "raw",
-                    "options": {
-                        "raw": {
-                            "language": "json"
-                        }
-                    },
-                    "raw": "{\n  \"titulo\":\"Que wasa\",\n  \"textoprincipal\":\"esta pelicula me da miedo\",\n  \"categoriname\":\"wasa\",\n  \"status\":\"true\"\n}"
-                }
-            }
-        },
-        {
-            "name": "deletePublicaciones",
-            "request": {
-                "method": "DELETE",
-                "url": {
-                    "raw": "http://localhost:3000/GestorOpinionesSystem/v1/publicacion/67bd25d3ceb4312a65f12c95",
-                    "path": [
-                        "GestorOpinionesSystem",
-                        "v1",
-                        "publicacion",
-                        "67bd25d3ceb4312a65f12c95"
-                    ],
-                    "protocol": "http",
-                    "host": [
-                        "localhost"
-                    ],
-                    "port": "3000"
-                },
-                "header": [
-                    {
-                        "key": "x-token",
-                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JiNmJjMjZmMzM4OGQyOTE2M2FjZjIiLCJpYXQiOjE3NDA0NDc4NDAsImV4cCI6MTc0MDQ1MTQ0MH0.uCQl7uIC-Ya0Ee9o2wkRAzLF8ZplIqMXfbi20YjjHKE"
-                    }
-                ]
             }
         }
     ]
