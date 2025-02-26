@@ -1,9 +1,9 @@
 
-import {Schema, model, version} from "mongoose";
+import {Schema, model} from "mongoose";
 
 const CommitSchema = Schema({
     textoprincipal: {type:String,required:true},
-    user:{type:Schema.Types.ObjectId, ref:'user',required:true},
+    user:{type:Schema.Types.ObjectId, ref:'User',required:true},
     status:{ type: Boolean, default:true}
 },
 {
