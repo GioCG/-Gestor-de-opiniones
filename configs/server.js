@@ -1,3 +1,4 @@
+
 'use strict';
  
 import express from 'express';
@@ -5,23 +6,31 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
-//import limiter from '../src/middlewares/validar-cant-peticiones.js';
- 
+import limiter from '../src/middlewares/validar-cant-peticiones.js';
+import authRoutes from '../src/auth/auth.routs.js'
+import userRoutes from '../src/user/user.routs.js'
+import productRoutes from '../src/product/product.routs.js'
+import categoryRoutes from '../src/category/category.routs.js'
+import cartRoutes from '../src/shoppingCart/shoppingCart.routs.js'
+import billRoutes from '../src/bill/bill.routs.js'
+
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
     app.use(cors());
     app.use(express.json());
     app.use(helmet());
     app.use(morgan('dev'));
-    //app.use(limiter);
+    app.use(limiter);
 }
  
-/*const routes = (app) => {
-    app.use("/adoptionSystem/v1/auth", authRoutes);
-    app.use("/adoptionSystem/v1/users", userRoutes);
-    app.use("/adoptionSystem/v1/pets", petRouters);
-    app.use("/adoptionSystem/v1/appointment", appointmentRouters);
-}*/
+const routes = (app) => {
+    app.use("/gestionadorCompraVirtual/v1/auth", authRoutes);
+    app.use("/gestionadorCompraVirtual/v1/product", productRoutes);
+    app.use("/gestionadorCompraVirtual/v1/user",userRoutes);
+    app.use("/gestionadorCompraVirtual/v1/category",categoryRoutes);
+    app.use("/gestionadorCompraVirtual/v1/cart",cartRoutes);
+    app.use("/gestionadorCompraVirtual/v1/bill",billRoutes);
+}
  
 const conectarDB = async () => {
     try{
